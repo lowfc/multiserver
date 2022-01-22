@@ -1,5 +1,4 @@
 import sys
-import os
 try:
     from aiohttp import web
     import json
@@ -18,7 +17,7 @@ except ImportError as e:
 
 
 try:
-    with open("config.yml", "r") as f:
+    with open(r"..\config.yml", "r") as f:
         config = yaml.load(f, yaml.Loader)
         ANSWER_JSON = config["from_json_file"]
         HOST = config["host"]
